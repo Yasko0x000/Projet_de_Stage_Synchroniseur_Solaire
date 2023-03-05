@@ -1,0 +1,23 @@
+Étudier et réaliser les tâches suivantes :
+
+ 	- Ajouter sur un raspberry pi, un pilote de carte de mesure de courant
+
+	- Intégrer le pilote au synchroniseur solaire existant
+
+ 	- Ajouter un bus MQTT et une extension home assistant
+		--> https://www.home-assistant.io/
+
+		ZigBee2MQTT ??
+
+			--> Installation de home assistant sur raspi 4 ( https://www.home-assistant.io/installation/raspberrypi)
+				-- Celui ci semble etre serveur, maintenaint il faut comprendre comment avoir un client ?
+					{Normalement il dois y avoir des biblioteques disponible en arduino}
+	- Intégrer l'ensemble dans une distribution Raspberry Pi pour faciliter le déploiement
+
+
+Entrainement Bus MQTT
+
+	--> Install mosquitto & mosquitto-clients sur raspi 4
+	--> Test de pub et sub (topic Test)
+	--> Installation de Home Assistant sur Telephone
+	--> Tuto de config https://github.com/home-assistant/addons/blob/master/mosquitto/DOCS.md

@@ -1,0 +1,6 @@
+Faire un script qui va recuperer tout ce que le processeur fais tourner, la consommation de la ram
+
+EN GROS comme avec le gestionnaire de taches (mais pr RPI)
+
+
+homeassistant/led >> ON/OFF

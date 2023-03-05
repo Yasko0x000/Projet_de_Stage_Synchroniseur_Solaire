@@ -1,0 +1,153 @@
+J'ai reussi à configurer home assistant correctement,
+
+J'ai commencé par installer MQTT sur la page parametre > modules complementaires > mqtt broker
+
+ensuite j'ai crée un utilisateur dans parametres > personnes (user = mqttbroker et mdp = guadeloupe)
+
+J'ai ensuite config mqtt à la page parametre > Appareils et services > core-mosquitto (MQTT), j'ai 
+appuyé sur configurer et rentré les donné de connexion pour user et mdp (mqttbroker). [VOir img]
+
+
+J'ai également modifié le code de pub en ajoutant 2 lignes 
+Pour ajouter un paramètre d'identification, vous pouvez déclarer deux variables pour le nom 
+d'utilisateur et le mot de passe. Vous pouvez les utiliser pour vous connecter à votre serveur MQTT :
+
+const char* mqtt_username = "username";
+const char* mqtt_password = "password";
+
+Puis, lorsque vous appelez la fonction client.connect(), utilisez ces variables pour 
+inclure les informations d'identification dans la connexion :
+
+if (client.connect(clientId.c_str(), mqtt_username, mqtt_password)) {
+...
+}
+
+ensuite sur le CLI linux j'ai testé avec cette ligne de commande : 
+	└─# mosquitto_pub -h 192.168.1.118 -u mqttbroker -P guadeloupe -t esp8266 -m ON
+Ou 
+	└─# mosquitto_pub -h 192.168.1.118 -u mqttbroker -P guadeloupe -t esp8266 -m OFF
+
+Une fois fonctionnel, j'ai décidé d'ajouter un bouton sur la dashboard:
+
+voici les étapes à suivre :
+
+Pour ajouter un bouton dans la dashboard de Home Assistant qui permet de souscrire à un sujet, 
+vous pouvez utiliser l'interface de l'application pour créer un élément de contrôle personnalisé en 
+utilisant des scripts automatisés et des actions.
+
+1.Accédez à l'application Home Assistant et connectez-vous à votre instance.
+2.Accédez à l'onglet "Automatisations" dans le menu latéral.
+3.Cliquez sur "Nouvelle automatisation".
+4.Configurez les détails de votre automatisation en définissant un déclencheur et une action. Pour ce 
+	faire, vous pouvez définir un bouton en tant que déclencheur et une action de souscription à 
+	un sujet en utilisant les services MQTT.
+5.Enregistrez votre automatisation.
+6.Revenez à l'onglet "Dashboard" et ajoutez un nouvel élément de contrôle personnalisé en choisissant 
+	"Automatisation" comme type d'entité.
+7.Sélectionnez votre automatisation enregistrée dans la liste déroulante.
+8.Enregistrez et affichez votre dashboard mis à jour pour voir le bouton ajouté.
+9.Cliquez sur le bouton pour déclencher l'automatisation et vous abonner au sujet choisi.
+
+
+Cependant je veux un bouton qui va me permettre de switch la lumiere entre ON et OFF
+
+J'ai analysé plusieurs exemple de code yaml, comme celui ci par exemple : 
+https://github.com/thomasloven/lovelace-state-switch
+
+Il faut commencer par crée une entité, donc : 
+paramatres > entrées (en haut à droite) > créer une entrée > interrupteur.
+
+Une fois l'entité crée on se dirige vers la dashboard :
+Trois petits points > modifissser le tableau de bord > encore une fois trois petits points >
+	> éditeur de configuration > dans card on rentre ceci :
+
+	- type: entity-button
+        entity: input_boolean.led
+        icon: mdi:lightbulb
+        name: Node MCU Led Status
+        state_on: 'on'
+        state_off: 'off'
+// jusqu'a la nous avons le code qui permet d'avoir une icone en bouton, le suivant est un interrupteur réel
+      - type: entities
+        title: Light switches
+        entities:
+          - entity: input_boolean.led
+
+Il est egalement possible d'ajouter une carte au dashboard depuis l'interface, donc meme manip :
+	Trois petits points > modifier le tableau de bord > ajouter une carte >
+	> par entité > input_boolean.led (ou led)
+
+
+
+Vous pouvez ajouter un bouton dans la dashboard de votre Home Assistant pour contrôler l'état d'une 
+	lumière en publiant sur un sujet MQTT. Pour ce faire, vous devez d'abord créer un automatisme 
+	dans Home Assistant qui écoutera les publications sur un sujet MQTT spécifique. Lorsque le 
+	bouton est cliqué, Home Assistant publiera le message "ON" ou "OFF" sur ce sujet pour allumer 
+	ou éteindre la lumière.
+Voici un exemple de code dans Home Assistant pour ajouter un bouton de contrôle d'éclairage
+	à mettre dans parametres > automatisation et scenes > creer automatisation > commencer par 
+	automatisation vide > En haut à droite 3 points > modifier en tant YAML :
+
+alias: "Switch LED with Entity Button OFF"
+description: ""
+trigger:
+  - platform: state
+    entity_id:
+      - input_boolean.led
+    from: "on"
+    to: "off"
+condition: []
+action:
+  - service: mqtt.publish
+    data:
+      topic: esp8266
+      payload: "OFF"
+mode: single
+
+-------------------------Pour eteindre si l'etat est desactivé 
+
+---- Ou ----
+
+alias: "Switch LED with Entity Button ON"
+description: ""
+trigger:
+  - platform: state
+    entity_id:
+      - input_boolean.led
+    from: "off"
+    to: "on"
+condition: []
+action:
+  - service: mqtt.publish
+    data:
+      topic: esp8266
+      payload: "ON"
+mode: single
+
+-------------------------Pour allumer si l'etat est activé
+
+
+Sinon il est possible de faire le tout en interface graphique, au depart j'ai vu un 
+	peu l'interface graphique puis je me suis vite retournée vers la configuration en yaml
+	je trouve ca plus facile
+
+
+
+
+
+
+Pour connecter meross j'ai du installer HACS, pour l'installer j'ai besoin du terminal, donc j'ai tout 
+d'abord activé le mode avancée, donc : profil > mode avancé. 
+Puis installé Terminal & SSH (dans parametre > modules complémentaires > boutique des modules complementaires >
+> Terminal & SSH > Installer )
+
+Voir https://www.wundertech.net/how-to-install-hacs-on-home-assistant/
+
+Ensuite on entre dans le terminal ssh et on tappe cette ligne de commande :
+	wget -O - https://get.hacs.xyz | bash -
+
+Ensuite faut redemarrer le systeme ( ha ha restart)
+
+Nous voila à l'étape de l'installation de HACS, donc :
+
+parametre > appareil et services > Ajouter une integration

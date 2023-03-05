@@ -1,0 +1,92 @@
+Si vous ne parvenez pas à trouver l'intégration Meross dans l'interface de configuration de Home
+Assistant, vous pouvez essayer de l'installer via HACS (Home Assistant Community Store). 
+HACS est une plate-forme communautaire qui permet d'installer et de gérer des intégrations 
+pour Home Assistant.
+
+Les étapes pour installer l'intégration Meross via HACS sont les suivantes :
+
+Accédez à l'interface de configuration de Home Assistant en utilisant un navigateur web.
+Cliquez sur l'onglet "HACS" dans le menu latéral.
+Cliquez sur "Store" pour accéder au magasin HACS.
+Recherchez "Meross" dans le champ de recherche et sélectionnez l'intégration Meross lorsqu'elle apparaît.
+Cliquez sur "Installer" pour installer l'installation de l'intégration.
+Une fois l'installation terminée, redémarrez Home Assistant pour que les modifications soient 
+	prises en compte.
+Après avoir redémarré Home Assistant, l'intégration Meross devrait être disponible dans l'interface 
+	de configuration. Vous pourrez alors la configurer et l'utiliser pour contrôler et automatiser vos appareils Meross.
+
+
+Le code fonctionnel :
+
+title: Département R&T
+views:
+  - theme: Backend-selected
+    title: Fuze Tea
+    path: fuze-tea
+    icon: mdi:coffee
+    badges:
+      - entity: update.mosquitto_broker_update
+      - entity: binary_sensor.rpi_power_status
+    cards:
+      - type: entity-button
+        entity: input_boolean.led
+        icon: mdi:lightbulb
+        name: Node MCU Led Status
+        state_on: 'on'
+        state_off: 'off'
+      - type: entities
+        title: Light switches
+        entities:
+          - entity: input_boolean.led
+      - type: entities
+        entities:
+          - light.smart_plug_2201209791322551809148e1e9882c32_dndmode
+          - switch.smart_plug_2201209791322551809148e1e9882c32_outlet
+          - sensor.smart_plug_2201209791322551809148e1e9882c32_current
+          - sensor.smart_plug_2201209791322551809148e1e9882c32_energy
+          - sensor.smart_plug_2201209791322551809148e1e9882c32_power
+          - sensor.smart_plug_2201209791322551809148e1e9882c32_signal_strength
+          - sensor.smart_plug_2201209791322551809148e1e9882c32_voltage
+  - theme: Backend-selected
+    path: default_view
+    title: User Home
+    icon: ''
+    subview: true
+    badges: []
+    cards:
+      - type: grid
+        square: true
+        columns: 3
+        cards:
+          - type: picture-entity
+            entity: person.sync
+            aspect_ratio: '1'
+            show_name: false
+            image: >-
+              data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'
+              viewBox='0 0 50 50' width='50' height='50'
+              style='background-color:%23b3e5fC'%3E%3Cg%3E%3Ctext
+              font-family='roboto' x='50%25' y='50%25' text-anchor='middle'
+              stroke='%23212121' font-size='1.3em'
+              dy='.3em'%3Es%3C/text%3E%3C/g%3E%3C/svg%3E
+          - type: picture-entity
+            entity: person.mqtt_broker
+            aspect_ratio: '1'
+            show_name: false
+            image: /api/image/serve/ef3918b2a7fbc0bf6c297c48f9e56bdf/512x512
+
+
+
+
+---------------------------------------
+
+
+AU vu de tout le temps que j'ai du passer pour faire la configuration, je ne prend pas de risque, 
+je fais donc une sauvegarde (snapshot ou backup) automatique.
+
+J'ai crée un compte gmail pour le drive ;
+
+id  : hasync.solar@gmail.com
+mdp : rahXuchooy0ahh4Sheet8aegaileifae2Aephoh3aiyahgo6uaziojeoMah5zei7
+
+

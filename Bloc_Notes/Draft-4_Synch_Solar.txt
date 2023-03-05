@@ -1,0 +1,7 @@
+Aprés 1 h de chargement, j'ai reussi à installer une version recente de raspbian os. 
+
+J'ai recu le materiel neccessaire, je vais donc pouvoir faire le TP-esp8266.pdf, afin de m'ambianter sur le terrain.
+
+	[Pendant ce temps] Preparation complete os raspi ( mise à jour, installation service neccessaire au serveur mqtt etc)
+
+Fin de journée, j'en suis au point où je dois developper un programme qui mesure la temperature, Du 1 au 4 sont faits.

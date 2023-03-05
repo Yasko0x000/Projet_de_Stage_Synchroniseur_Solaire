@@ -1,0 +1,21 @@
+2x cables ethernetok
+
+ESP8266
+
+2x Rpi4 ok
+
+1x RPIZ + Carte de mesure (Tourne vis) ok
+
+1x Adaptateur HMDI to VGA ok
+
+1x Adaptateur carte sd (USB-sd)
+
+3x Carte SD ok
+
+1x cable Hdmi vers rpi 4ok
+
+1x Alimentation Rpi 4 (type C) ok
+
+1x Borne Linksys ok
+1x Alimentation Linksysok
+2x Antennes Linksys

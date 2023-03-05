@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>          <!--Cette ligne nous permes d'eviter de passer en quirks mode lors du rendu d'un document-->
+<html lang="fr">
+<head>                   <!--La variable "head" c'est pour reperer l'entete du site, on y met tout les bases du site sans qu'il ne sois concretement visible sur le site (sauf pour le title et le favicon)-->
+	<title>Accueil</title>                                                        <!-- Variable titre -->
+  <meta charset="utf-8">                                                        <!-- L'encodage utf-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">        <!-- L'élément de métadonnées du document -->
+	<link rel="stylesheet" type="text/css" href="css/menu.css">                   <!-- Les suivantes 4 lignes sont des liaison pour le bon fonctionnement de mon site -->
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+  
+
+  <link rel="icon" type="image/png" href="img/yasko_logo.png" />
+
+</head>
+
+
+<body>                                    <!-- A partir de cette variable jusqu'a sa fermeture, il y'aura tout le contenu du site-->
+
+  <header>      <!--En tete-->
+
+    <h1>  <img class="logo" src="img/yasko_logo.png" alt="Logo-Yassine">                                      <!-- La balise h1 est pour repérer un titre dans une page-->
+      <b>Yassine EL HAMIOUI </b>                  <!-- <b> nous permet de mettre en gras un texte-->
+        <img class="logo" src="img/yasko_logo.png" alt="Logo-Yassine"> 
+      </h1>
+    </header>
+
+  <input type="checkbox" id="check_menu" >       <!-- La balise imput a la fonctionnalité de créer un contrôle interactif dans un formulaire web qui permet à l'utilisateur de saisir des données, dans mon cas sous forme de box -->
+      <nav class="header">                               <!-- Nav est une balise destinée à la navigation, mais dans mon paragraphe cela concerne le menu burger -->
+      	<div class="h-left">
+      		<label for="check_menu">                       <!-- label c'est une legende ou bien une étiquette -->
+      			<i class="fa fa-bars"></i>                   <!-- <i> représente un morceau de texte qui se différencie du texte principal (au lieu de <p>) -->
+      		</label>
+      	</div>
+      </nav>
+
+<div class="sidebar">                                    <!-- <div> est une balise qui permet de creer une division ou bien un conteneur, il ne change pas la mise en forme du site, sauf comme dans mon cas, j'ai rajoité une class pour crée une reference pour ensuite la modifier dans le css (stylesheet)-->
+     <div class="sidebar_close">
+        <img class="logo" src="img/yasko_logo.png" alt="Logo-Yassine">          <!-- La variable img nous permet d'inserer une image peut importe son format (png, jpg, jpeg,etc), il est utile de mettre un alt="" est mettre a l'interieur un texte qui va s'afficher en cas d'erreur-->
+        <label for="check_menu"><i class="fa fa-close"></i></label>
+     </div>
+     
+	<div class="nav-list">
+		    <a class="micon" href="index.html"><i class="fa fa-home ic"></i><span>Accueil</span> </a>     <!-- <a> cela permet de crée des lien, il y'a donc tres souvent un href="" qui va donc contenir le chemin du lien souhaité, cette explication est valable pour les 5 lignes suivantes-->
+        <a class="micon" href="bio.html"><i class="fa fa-user-secret" aria-hidden="true"></i><span>Biographie</span></a>
+		    <a class="micon" href="centre.html"><i class="fa fa-superpowers" aria-hidden="true"></i><span>Centre d'interet </span></a>
+        <a class="micon" href="parcours-scolaire.html"><i class="fa fa-book"></i><span>Parcours scolaire</span></a>
+        <a class="micon" href="pro.html"><i class="fa fa-briefcase"></i><span>Projet Professionel</span></a>
+        <a class="micon" href="Curriculum_Vitae-Yassine_EL-Hamioui.pdf" target="_blank"><i class="fa fa-user-circle-o"></i><span>Mon CV</span></a>
+        <br><br><br>   <!-- Cette ligne me permet de mettre a la ligne une variable, dans mon cas je l'ai utilisé plusieurs fois pour eviter de toucher à cela dans css -->
+    </div>
+    <p style="padding-left: 15px;">Musique tranquille pour faciliter la lecture</p>
+    <audio controls>
+      <source src="img/sake.mp3" type="audio/mpeg">
+      Your browser does not support the audio tag.
+    </audio>
+</div>
+
+
+<h2>                                        <!-- La balise h2 est pour repérer un titre dans une page, mais de moins importance-->
+  Bienvenue dans mon site, vous êtes sur la page d'accueil
+</h2>
+
+
+<p class="push">                            <!-- cette balise permet de faire un texte simple -->
+  Veuillez appuyer sur la case qui vous interesse 
+</p>
+    <div class="frame">
+      <a href="bio.html"> <button class="custom-btn btn">Biographie</button></a>
+
+      <a href="centre.html"> <button class="custom-btn btn"><span>Centre d'interet</span></button></a>
+
+      <a href="parcours-scolaire.html"> <button class="custom-btn btn"><span> Parcours scolaire </span></button></a>
+
+      <a href="pro.html"> <button class="custom-btn btn"><span>Projet Professionel</span></button></a>
+
+      <a href="Curriculum_Vitae-Yassine_EL-Hamioui.pdf" target="_blank"> <button class="custom-btn btn"><span>Telecharger mon cv</span></button></a>
+    </div>
+
+<footer>                                                          <!-- le pied de page -->
+
+</footer>
+
+
+
+</body>
+</html>

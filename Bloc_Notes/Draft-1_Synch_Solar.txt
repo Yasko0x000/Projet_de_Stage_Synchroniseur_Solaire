@@ -1,0 +1,49 @@
+meross mss310 :
+	- Prise conncté
+	- Wattmètre conncté --> Recup la conso sur la prise
+
+Etat de l'art des prise ( Quels sont les marques qui vendent des prise et des wattmètre connecté ) ?
+	--> Meross  : Smart Wi-Fi Plug MSS310
+	--> Konyks  : Priska Max 3
+	--> TP-Link : Tapo P110
+	--> Philips : Hue Smart Plug
+	--> Amazon  : Echo Flex
+	--> Bosch   : Smart Plug 
+	--> Wiz     : Smart Plug Wi-Fi ( avec mesure consommation )
+	--> Eve     : Eve Energy (Technologie Homekit Apple)
+	--> Awox    : Plug Plus ( impossible d’accéder au paramétrage complet via WiFi )
+	--> Edimax  : SP-1101W ( pas de suivi de consommation )
+	--> Trendnet: THA-101 ( avec mesure consommation )
+
+
+Comment les connecter en distance ( depuis un programme ) ?
+	--> https://arno0x0x.wordpress.com/2015/04/02/rf433-outlet/
+
+Quel est l'interer de connaitre la conso d'une prise ? 
+	 </> ...Tableau expliqué... </>
+
+Onduleur phtovoltaique :
+--> L'onduleur est la pièce maîtresse d'une installation photovoltaïque raccordée au réseau. 
+			Il transforme le courant continu issu des panneaux solaires (12 ou 48 V) en courant alternatif 
+			utilisable par le réseau (220 V).
+
+	- Compteur de production
+		--> Le compteur de production d'énergie pour installation électrique monophasé 32A (calibre: 32A MID) 
+			collecte et calcule en temps réel le volume de production d'énergie produite par vos panneaux solaires.
+	- Compteur de consommation
+
+
+
+Normes de domotique --> Possibilité  ?  --> Mat R
+	--> KNX est le standard domotique international le plus récent en terme de radiocommunication :
+		. Ce standard est soutenu par les principaux fabricants et entreprises domotiques.
+		. KNX, affiché sur un matériel, promet à l'utilisateur que chaque appareil domotique de son
+			installation dialoguera avec les autres. Ce, sans problème et en toute fiabilité !
+		. KNX utilise la plage de fréquence européenne normalisée de 868 MHz. Votre investissement est 
+			garanti par cette norme « ouverte ».
+
+Relié en rs332
+
+###############################################
+## Test comment marche les prises connectées ## 
+###############################################

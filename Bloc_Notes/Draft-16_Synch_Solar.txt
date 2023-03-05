@@ -1,0 +1,42 @@
+Une erreur (voir photo) :  start job is running for Wait Until Kernel Time Synchronized 
+
+L'erreur "start job is running for Wait Until Kernel Time Synchronized" signifie généralement que le système 
+ne peut pas synchroniser l'heure avec le serveur NTP. Cela peut entraver le bon fonctionnement de Home Assistant, 
+car de nombreux composants dépendent de la synchronisation correcte de l'heure. Il est recommandé de résoudre cette 
+erreur en configurant le protocole NTP sur votre Raspberry Pi pour synchroniser l'heure avec un serveur NTP fiable.
+
+C'est quoi NTP ?
+
+NTP signifie "Network Time Protocol". Il s'agit d'un protocole de réseau qui permet de synchroniser l'heure sur 
+différents ordinateurs et périphériques connectés à un réseau. En utilisant NTP, les différents appareils peuvent 
+maintenir une heure cohérente, ce qui peut être important pour de nombreuses applications, telles que les systèmes 
+de contrôle de la maison intelligents.
+
+
+Comment je le configure ?
+
+
+Pour configurer NTP sur HassOS, vous pouvez suivre ces étapes :
+Accédez à l'interface de configuration de HassOS en utilisant un navigateur web et connectez-vous en tant 
+	qu'administrateur.
+1.Cliquez sur "Configuration" et sélectionnez "Système".
+2.Cliquez sur "NTP" dans la section "Date et heure".
+3.Sélectionnez "Activer NTP" pour activer la synchronisation de l'heure via NTP.
+4.Entrez les adresses de serveur NTP que vous souhaitez utiliser dans les champs "Serveur NTP 1", "Serveur NTP 2", 
+	etc. Il existe de nombreux serveurs NTP publics disponibles pour utiliser, tels que pool.ntp.org.
+5.Cliquez sur "Enregistrer les modifications" pour enregistrer vos paramètres NTP.
+
+Redémarrez votre Home Assistant pour que les modifications prennent effet.
+
+Veuillez noter que ces étapes peuvent varier légèrement en fonction de la version de HassOS que vous utilisez. 
+Assurez-vous de consulter la documentation officielle pour des instructions plus détaillées.
+
+
+
+
+
+Le ha est helty = unhealty 
+Voire https://community.home-assistant.io/t/home-assistant-is-unhealthy/476112, puis 
+https://www.home-assistant.io/more-info/unhealthy/supervisor
+
+Donc ha > supervisor update (voir img #processing...)
