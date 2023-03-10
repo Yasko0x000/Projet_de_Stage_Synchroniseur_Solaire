@@ -1,14 +1,12 @@
 Le RPIZ CT3V1 est un capteur de courant compatible avec le Raspberry Pi qui peut être utilisé pour mesurer 
-	le courant dans une boucle. Pour utiliser ce capteur, vous devrez suivre les étapes suivantes :
+	le courant dans une boucle. Pour utiliser ce capteur, je dois suivre les étapes suivantes :
 
-1.Branchez le capteur sur la carte d'extension du Raspberry Pi.
-2.Configurez le capteur en utilisant les bibliothèques appropriées pour votre langage de programmation préféré 
-	(par exemple, Python).
-3.Établissez une connexion avec le capteur et configurez les paramètres de mesure 
+1.Brancher le capteur sur la carte d'extension du Raspberry Pi.
+2.Configurer le capteur en utilisant les bibliothèques appropriées (donc en python)
+3.Établire une connexion avec le capteur et configurer les paramètres de mesure 
 	(par exemple, la plage de mesure, la résolution, la fréquence d'échantillonnage, etc.).
-4.Collectez les données de mesure en effectuant des lectures périodiques du capteur.
-5.Enregistrez les données de mesure pour un stockage et une analyse ultérieurs.
+4.Collecter les données de mesure en effectuant des lectures périodiques du capteur.
+5.Enregistrer les données de mesure pour un stockage et une analyse ultérieurs.
 
 Il est important de noter que les détails de la configuration et de la collecte de données dépendent de 
-	la carte d'extension et du capteur utilisé. Assurez-vous de consulter la documentation fournie avec votre 
-	équipement pour obtenir des instructions détaillées.
+	la carte d'extension et du capteur utilisé.
